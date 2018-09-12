@@ -1,14 +1,78 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+<ion-header color="navbarColor">
+  <ion-navbar color="navbarColor">
+      <button ion-button icon-only clear (click)="test()">
+        <ion-icon ios="ios-refresh" md="md-refresh"></ion-icon>
+      </button>
+
+      <ion-title>
+        <img width="33" height="33" src="assets/imgs/trtl icon2 white.png">
+      </ion-title>
+
+      <ion-buttons end>
+        <button ion-button icon-only (click)="openModal()">
+          <ion-icon ios="ios-settings" md="md-settings"></ion-icon>
+        </button>
+      </ion-buttons>      
   </ion-navbar>
+
+  <div class="totalFundsDiv">
+      <h3>420.69 TRTL</h3>
+  </div>
+
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<!-- TODO: ion-refresher not working for some reason -->
+<ion-content ion-refresher>
+    <ion-list>
+        <ion-item>
+          <ion-row>
+            <ion-col col-3>
+              <ion-icon style="color: grey;" ios="ios-mail" md="md-mail"></ion-icon>
+            </ion-col>
+            <ion-col col-4>
+              4.20
+            </ion-col>
+            <ion-col col-5 style="text-align: right;">
+              trtl_1xldj...w9msl
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item>
+          <ion-row>
+            <ion-col col-3>
+              <ion-icon style="color: grey;" ios="ios-send" md="md-send"></ion-icon>
+            </ion-col>
+            <ion-col col-4>
+              4.20
+            </ion-col>
+            <ion-col col-5 style="text-align: right;">
+              trtl_1xldj...w9msl
+            </ion-col>
+          </ion-row>
+        </ion-item>
+        <ion-item></ion-item>
+        <ion-item></ion-item>
+        <ion-item></ion-item>
+        <ion-item></ion-item>
+        <ion-item></ion-item>
+        <ion-item></ion-item>
+        <ion-item></ion-item>        
+    </ion-list> 
+
+  <ion-grid ion-fixed class="sendReceiveDiv">
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button icon-end large color="buttonColor" style="width: 80%" (click)="test()">
+          Receive
+          <ion-icon ios="ios-flash" md="md-flash"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button icon-start large color="buttonColor" style="width: 80%" (click)="navigateToSend()">
+          <ion-icon ios="ios-send" md="md-send"></ion-icon>
+            Send
+        </button>      
+      </ion-col>      
+    </ion-row>
+  </ion-grid>
 </ion-content>
