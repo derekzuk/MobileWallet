@@ -10,7 +10,7 @@
         <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
       </button> -->
 
-      <ion-title>
+      <ion-title style="text-align: center;">
         Send
       </ion-title>
 
@@ -22,81 +22,84 @@
   </ion-navbar>
 </ion-header>  
 
-<ion-content padding style="background-color: rgb(10, 58, 0);">
+<ion-content ion-fixed style="margin-top: 56px; background-color: rgb(10, 58, 0);">
 
-  <div ion-fixed style="background-color: white; width: 100%; height: 70px; position:relative; top:0px; z-index:2; padding-top: 13px;">
-    <ion-input text-center style="width: 50%" ion-fixed class="trtlAddress" placeholder="Enter a TRTL Address"></ion-input>
+  <div ion-fixed style="background-color: white; width: 100%; height: 70px; position:relative; top:0px; padding-top: 13px; margin-top: -56px;">
+    <ion-input text-center class="trtlAddress" placeholder="Enter a TRTL Address"></ion-input>
   </div>
 
-  <div ion-fixed style="background-color: yellowgreen; width: 100%; height: 140px; position:relative; top:0px; z-index:3;">
-    <ion-input disable text-center style="width: 50%; height: 70px; position:relative; top:0px; z-index:3; text-align: center; padding-top: 13px;"  ion-fixed placeholder="0 TRTL">
+  <div ion-fixed style="background-color: yellowgreen; width: 100%; height: 140px; position:relative; top:0px;">
+    <ion-item style="background-color: yellowgreen;">
+      <button ion-button item-left color="buttonColor" style="margin-top: 20px;" (click)="setMax()">Max</button>
+    <ion-input disable text-center style="height: 57px; text-align: center; padding-top: 13px;"  placeholder="0 TRTL">
     </ion-input>
+    </ion-item>
 
-    <div text-center ion-fixed style="border: 0.5px solid grey; position:relative; top:0px; z-index:3;"></div>
-  
-    <ion-input disable text-center style="width: 50%; height: 70px; position:relative; top:0px; z-index:3; text-align: center; padding-top: 13px;" ion-fixed placeholder="$0">
+    <div style="text-align: center; height: 13px;">
+      <ion-icon style="transform: rotate(90deg); font-size: 26px" ios="ios-swap" md="md-swap"></ion-icon>
+    </div>
+    
+    <ion-input disable text-center style="height: 70px; text-align: center; padding-top: 13px; border-top: 0.5px solid gray" placeholder="$0">
     </ion-input>
   </div>
 
-  <!-- <div ion-fixed style="width: 100%; height: 100%"> -->
-      <ion-grid style="height: 100%; padding-top: 230px">
-        <ion-row>
-          <ion-col text-center>
-            <button ion-button large full clear>1</button>
-          </ion-col>
-          <ion-col text-center>
-            <button ion-button large full clear>2</button>
-          </ion-col>      
-          <ion-col text-center>
-            <button ion-button large full clear>3</button>
-          </ion-col>        
-        </ion-row>
+  <ion-grid ion-fixed>
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button large full clear>1</button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button large full clear>2</button>
+      </ion-col>      
+      <ion-col text-center>
+        <button ion-button large full clear>3</button>
+      </ion-col>        
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button large full clear>4</button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button large full clear>5</button>
+      </ion-col>      
+      <ion-col text-center>
+        <button ion-button large full clear>6</button>
+      </ion-col>        
+    </ion-row>
     
-        <ion-row>
-          <ion-col text-center>
-            <button ion-button large full clear>4</button>
-          </ion-col>
-          <ion-col text-center>
-            <button ion-button large full clear>5</button>
-          </ion-col>      
-          <ion-col text-center>
-            <button ion-button large full clear>6</button>
-          </ion-col>        
-        </ion-row>
-        
-        <ion-row>
-          <ion-col text-center>
-            <button ion-button large full clear>7</button>
-          </ion-col>
-          <ion-col text-center>
-            <button ion-button large full clear>8</button>
-          </ion-col>      
-          <ion-col text-center>
-            <button ion-button large full clear>9</button>
-          </ion-col>        
-        </ion-row>
-  
-        <ion-row>
-          <ion-col text-center>
-            <button ion-button large full clear>.</button>
-          </ion-col>
-          <ion-col text-center>
-            <button ion-button large full clear>0</button>
-          </ion-col>      
-          <ion-col text-center>
-            <button ion-button large full clear>del</button>
-          </ion-col>        
-        </ion-row>      
-    
-        <ion-row>
-          <ion-col text-center>
-            <button ion-button icon-start large color="buttonColor" style="width: 80%" (click)="test()">
-              Send
-            </button>
-          </ion-col>
-        </ion-row>
-    
-      </ion-grid>
-    <!-- </div>   -->
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button large full clear>7</button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button large full clear>8</button>
+      </ion-col>      
+      <ion-col text-center>
+        <button ion-button large full clear>9</button>
+      </ion-col>        
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button large full clear>.</button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button large full clear>0</button>
+      </ion-col>      
+      <ion-col text-center>
+        <button ion-button large full clear>del</button>
+      </ion-col>        
+    </ion-row>      
+
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button icon-start large color="buttonColor" style="width: 80%" (click)="test()">
+          Send
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
 
 </ion-content>

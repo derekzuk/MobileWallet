@@ -9,6 +9,10 @@ page-home {
         color: white;
     }
 
+    ion-title {
+        text-align: center;
+    }
+
     h3 {
         background-color: rgb(10, 58, 0);  
         margin-top: 0px;
@@ -27,7 +31,7 @@ page-home {
         background-color: rgb(10, 58, 0);  
         margin-top: 0px;
         margin-bottom: 0px;     
-        height: 50px;   
+        height: 40px;   
     }
 
     .sendReceiveDiv {

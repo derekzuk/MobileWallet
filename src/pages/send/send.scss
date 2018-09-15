@@ -8,13 +8,15 @@ page-send {
         height: 20%;
     }
 
-    ion-footer {
-        padding-top: 240px;
-    }
-
     .button-inner {
         color: white;
     }
+
+    .item-md.item-block .item-inner {
+        padding-right: 62px;
+        border-bottom: none;
+    }
+
 
     h3 {
         // background-color: rgb(10, 58, 0);  
