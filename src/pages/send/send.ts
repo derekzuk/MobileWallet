@@ -15,6 +15,7 @@ import { QrscanPage } from '../qrscan/qrscan'
   templateUrl: 'send.html',
 })
 export class SendPage {
+  trtlQuantityToSend: string = "0";
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -30,6 +31,14 @@ export class SendPage {
   navigateToQRScan() {
     console.log("navigating to QrscanPage page");
     this.navCtrl.push(QrscanPage);    
+  }
+
+  populateTrtlQuantityToSend(num: string) {
+    if (this.trtlQuantityToSend == "0") {
+      this.trtlQuantityToSend = num;
+    } else {
+      this.trtlQuantityToSend = this.trtlQuantityToSend.concat(num);
+    }
   }
 
 }

@@ -8,14 +8,9 @@ page-send {
         color: white;
     }
 
-    .item-md.item-block .item-inner {
-        padding-right: 62px;
-        border-bottom: none;
-    }
-
-    .item-sm.item-block .item-inner {
-        padding-right: 62px;
-        border-bottom: none;
+    .item-inner {
+        padding-right: 62px!important;
+        border-bottom: none!important;
     }
 
     h3 {

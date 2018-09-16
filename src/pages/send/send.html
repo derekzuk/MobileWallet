@@ -31,7 +31,7 @@
   <div ion-fixed style="background-color: yellowgreen; width: 100%; height: 140px; position:relative; top:0px;">
     <ion-item style="background-color: yellowgreen;">
       <button ion-button item-left color="buttonColor" style="margin-top: 20px;" (click)="setMax()">Max</button>
-    <ion-input disabled="true" text-center style="height: 57px; text-align: center; padding-top: 13px;"  placeholder="0 TRTL">
+    <ion-input disabled="true" text-center style="height: 57px; text-align: center; padding-top: 13px;"  placeholder="{{trtlQuantityToSend}}">
     </ion-input>
     </ion-item>
 
@@ -46,37 +46,37 @@
   <ion-grid ion-fixed>
     <ion-row>
       <ion-col text-center class="gridColOffsetLeft">
-        <button ion-button large full clear>1</button>
+        <button ion-button large full clear (click)="populateTrtlQuantityToSend('1');">1</button>
       </ion-col>
       <ion-col text-center>
-        <button ion-button large full clear>2</button>
+        <button ion-button large full clear (click)="populateTrtlQuantityToSend('2');">2</button>
       </ion-col>      
       <ion-col text-center class="gridColOffsetRight">
-        <button ion-button large full clear>3</button>
+        <button ion-button large full clear (click)="populateTrtlQuantityToSend('3');">3</button>
       </ion-col>        
     </ion-row>
 
     <ion-row>
       <ion-col text-center class="gridColOffsetLeft">
-        <button ion-button large full clear>4</button>
+        <button ion-button large full clear (click)="populateTrtlQuantityToSend('4');">4</button>
       </ion-col>
       <ion-col text-center>
-        <button ion-button large full clear>5</button>
+        <button ion-button large full clear (click)="populateTrtlQuantityToSend('5');">5</button>
       </ion-col>      
       <ion-col text-center class="gridColOffsetRight">
-        <button ion-button large full clear>6</button>
+        <button ion-button large full clear (click)="populateTrtlQuantityToSend('6');">6</button>
       </ion-col>        
     </ion-row>
     
     <ion-row>
       <ion-col text-center class="gridColOffsetLeft">
-        <button ion-button large full clear>7</button>
+        <button ion-button large full clear (click)="populateTrtlQuantityToSend('7');">7</button>
       </ion-col>
       <ion-col text-center>
-        <button ion-button large full clear>8</button>
+        <button ion-button large full clear (click)="populateTrtlQuantityToSend('8');">8</button>
       </ion-col>      
       <ion-col text-center class="gridColOffsetRight">
-        <button ion-button large full clear>9</button>
+        <button ion-button large full clear (click)="populateTrtlQuantityToSend('9');">9</button>
       </ion-col>        
     </ion-row>
 
@@ -85,7 +85,7 @@
         <button ion-button large full clear>.</button>
       </ion-col>
       <ion-col text-center>
-        <button ion-button large full clear>0</button>
+        <button ion-button large full clear (click)="populateTrtlQuantityToSend('0');">0</button>
       </ion-col>      
       <ion-col text-center class="gridColOffsetRight">
         <button ion-button large full clear>del</button>
