@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { QrscanPage } from '../qrscan/qrscan'
 
 /**
  * Generated class for the SendPage page.
@@ -24,6 +25,11 @@ export class SendPage {
 
   test() {
     console.log("in test()");
+  }
+
+  navigateToQRScan() {
+    console.log("navigating to Send page");
+    this.navCtrl.push(QrscanPage);    
   }
 
 }
