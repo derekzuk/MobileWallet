@@ -32,10 +32,9 @@ export class QrscanPage {
          // start scanning
          let scanSub = this.qrScanner.scan().subscribe((text: string) => {
            console.log('Scanned something', text);
-  
-           window.document.querySelector('body').classList.remove('transparent-body');
-           this.qrScanner.hide();
+          
            scanSub.unsubscribe(); // stop scanning           
+          this.navigateToSend();
          });
 
        } else if (status.denied) {
@@ -49,6 +48,16 @@ export class QrscanPage {
     .catch((e: any) => console.log('Error is', e));
  
     this.qrScanner.show();
+  }
+
+  ionViewCanLeave() {
+    window.document.querySelector('body').classList.remove('transparent-body');
+    this.qrScanner.hide(); 
+  }
+
+  navigateToSend() {
+    console.log("navigating to Send page");
+    this.navCtrl.pop();
   }
 
 }

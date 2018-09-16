@@ -28,7 +28,7 @@ export class SendPage {
   }
 
   navigateToQRScan() {
-    console.log("navigating to Send page");
+    console.log("navigating to QrscanPage page");
     this.navCtrl.push(QrscanPage);    
   }
 
