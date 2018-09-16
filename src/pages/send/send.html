@@ -31,16 +31,16 @@
   <div ion-fixed style="background-color: yellowgreen; width: 100%; height: 140px; position:relative; top:0px;">
     <ion-item style="background-color: yellowgreen;">
       <button ion-button item-left color="buttonColor" style="margin-top: 20px;" (click)="setMax()">Max</button>
-    <ion-input disabled="true" text-center style="height: 57px; text-align: center; padding-top: 13px;"  placeholder="{{trtlQuantityToSend}}">
-    </ion-input>
+      <ion-label class="trtlQuantityToSendInput" text-center>{{trtlQuantityToSend}} TRTL
+      </ion-label>
     </ion-item>
 
-    <div style="text-align: center; height: 13px;">
+    <div style="text-align: center; height: 0px;">
       <ion-icon style="transform: rotate(90deg); font-size: 26px" ios="ios-swap" md="md-swap"></ion-icon>
     </div>
     
-    <ion-input disabled="true" text-center style="height: 70px; text-align: center; padding-top: 13px; border-top: 0.5px solid gray" placeholder="{{convertTrtlToDollars()}}">
-    </ion-input>
+    <ion-label class="trtlDollarConversion" text-center>{{convertTrtlToDollars()}}
+    </ion-label>
   </div>
 
   <ion-grid ion-fixed>
