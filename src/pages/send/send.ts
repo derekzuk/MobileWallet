@@ -16,6 +16,7 @@ import { QrscanPage } from '../qrscan/qrscan'
 })
 export class SendPage {
   trtlQuantityToSend: string = "0";
+  trtlDollarConversionPercentage = 0.0005;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -39,6 +40,11 @@ export class SendPage {
     } else {
       this.trtlQuantityToSend = this.trtlQuantityToSend.concat(num);
     }
+  }
+
+  convertTrtlToDollars() {
+    let dollarsValue = (+this.trtlQuantityToSend * this.trtlDollarConversionPercentage).toFixed(2);
+    return "$" + dollarsValue;
   }
 
 }
