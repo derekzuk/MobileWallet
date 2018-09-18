@@ -25,9 +25,12 @@ export class QrscanPage {
     this.qrScanner.prepare()
     .then((status: QRScannerStatus) => {
        if (status.authorized) {
-        window.document.querySelector('body').classList.add('transparent-body');
          console.log("Scanner status authorized");
          // camera permission was granted
+
+         this.qrScanner.show();
+         window.document.querySelector('body').classList.remove('black-body');
+         window.document.querySelector('body').classList.add('transparent-body');
 
          // start scanning
          let scanSub = this.qrScanner.scan().subscribe((text: string) => {
@@ -46,8 +49,6 @@ export class QrscanPage {
        }
     })
     .catch((e: any) => console.log('Error is', e));
- 
-    this.qrScanner.show();
   }
 
   ionViewCanLeave() {

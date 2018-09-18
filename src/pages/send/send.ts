@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { QrscanPage } from '../qrscan/qrscan'
+import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 
 /**
  * Generated class for the SendPage page.
@@ -18,11 +19,12 @@ export class SendPage {
   trtlQuantityToSend: string = "0";
   trtlDollarConversionPercentage = 0.0005;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public nativePageTransitions: NativePageTransitions) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SendPage');
   }
 
   test() {
@@ -30,8 +32,19 @@ export class SendPage {
   }
 
   navigateToQRScan() {
-    console.log("navigating to QrscanPage page");
-    this.navCtrl.push(QrscanPage);    
+    let options: NativeTransitionOptions = {
+      direction: 'down',
+      duration: 500,
+      slowdownfactor: 3,
+      slidePixels: 20,
+      iosdelay: 100,
+      androiddelay: 150,
+      fixedPixelsTop: 0
+     };
+
+    window.document.querySelector('body').classList.add('black-body');
+    this.nativePageTransitions.slide(options);
+    this.navCtrl.push(QrscanPage);
   }
 
   populateTrtlQuantityToSend(num: string) {
