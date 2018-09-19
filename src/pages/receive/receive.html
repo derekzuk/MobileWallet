@@ -4,37 +4,57 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header no-border color="navbarColor">
 
-  <ion-navbar>
-    <ion-icon ios="ios-send" md="md-send"></ion-icon>
-    <ion-title>
-        <ion-icon ios="ios-send" md="md-send"></ion-icon>      
+  <ion-navbar color="navbarColor">
+    <ion-title style="text-align: center;">
         Receive
     </ion-title>
+
+    <ion-buttons end>
+        <button ion-button icon-only (click)="openModal()">
+            <ion-icon ios="ios-share" md="md-share"></ion-icon>
+        </button>
+      </ion-buttons>    
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content ion-fixed padding>
+<ion-content ion-fixed padding text-center style="z-index: 0; background-color: rgb(10, 58, 0);">
 
-  <div style="width: 50%;">
-    This is your address. Scan this QR code to receive TRTL.
-  </div>
-
-  <div>
-    QR Code image
-  </div>
-  
-  <div style="width: 50%;">
-    TRTL Address:
-  </div>
-
-  <div style="width: 80%;">
-    trtl_123lskjafdlklsdjlfdjslkdfjlfkjsdlkdfsj
-  </div>
-
-  <button ion-button style="width: 80%;">Copy</button>
+  <ion-grid ion-fixed>
+      <ion-row style="display: flex!important; align-content: center!important; align-items: center!important;">
+        <ion-col>
+            <h5>
+              This is your address.
+              <br>
+              Scan this QR code to receive TRTL.
+            </h5>
+        </ion-col>
+      </ion-row>
+      <ion-row style="height: 80%; display: flex!important; align-content: center!important; align-items: center!important;">
+        <ion-col style="height: 100%;">
+            <img height="100%;" width="auto;" src="assets/imgs/qrcode.png">
+        </ion-col>
+      </ion-row>
+      <ion-row style="height: 15%; display: flex!important; align-content: center!important; align-items: flex-end!important;">
+        <ion-col>
+            TRTL Address:
+        </ion-col>
+      </ion-row>      
+      <ion-row style="height: 10%; display: flex!important; align-content: center!important; align-items: center!important;">
+        <ion-col>
+            trtl_123lskjafdlklsdjlfdjslkdfjlfkjsdlkdfsj
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+            <button ion-button large color="buttonColor" style="width: 80%;">
+              Copy
+            </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
 </ion-content>
