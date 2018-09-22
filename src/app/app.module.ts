@@ -12,6 +12,7 @@ import { HomePage } from '../pages/home/home';
 import { SendPageModule } from '../pages/send/send.module';
 import { ReceivePageModule } from '../pages/receive/receive.module';
 import { QrscanPageModule } from '../pages/qrscan/qrscan.module';
+import { SettingsPageModule } from '../pages/settings/settings.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { QrscanPageModule } from '../pages/qrscan/qrscan.module';
     SendPageModule,
     ReceivePageModule,
     QrscanPageModule,
+    SettingsPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
