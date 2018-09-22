@@ -6,7 +6,13 @@
 -->
 <ion-header no-border color="navbarColor">
 
-  <ion-navbar color="navbarColor">
+  <ion-navbar hideBackButton color="navbarColor">
+      <ion-buttons left>
+        <button ion-button icon-only clear (click)="returnToHome()">
+          <ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon>
+        </button>         
+      </ion-buttons>     
+
     <ion-title style="text-align: center;">
         Receive
     </ion-title>
@@ -45,12 +51,12 @@
       </ion-row>      
       <ion-row style="height: 10%; display: flex!important; align-content: center!important; align-items: center!important;">
         <ion-col>
-            trtl_123lskjafdlklsdjlfdjslkdfjlfkjsdlkdfsj
+            {{trtlAddress}}
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-            <button ion-button large color="buttonColor" style="width: 80%;">
+            <button ion-button large color="buttonColor" style="width: 80%;" (click)="copyAddressToClipboard()">
               Copy
             </button>
         </ion-col>

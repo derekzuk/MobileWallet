@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Clipboard } from '@ionic-native/clipboard';
+import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 
 /**
  * Generated class for the ReceivePage page.
@@ -14,12 +16,35 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'receive.html',
 })
 export class ReceivePage {
+  trtlAddress: string = "trtl_123lskjafdlklsdjlfdjslkdfjlfkjsdlkdfsj";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private clipboard: Clipboard, 
+    private nativePageTransitions: NativePageTransitions) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReceivePage');
+  }
+
+  copyAddressToClipboard() {
+    console.log("Copying address to clipboard")
+    this.clipboard.copy(this.trtlAddress);
+  }
+
+  ionViewCanLeave() {
+
+  }
+
+  returnToHome() {
+    let options: NativeTransitionOptions = {
+      direction: 'down',
+      duration: 500,
+     };
+
+    this.nativePageTransitions.slide(options);    
+    this.navCtrl.pop();    
   }
 
 }
