@@ -63,7 +63,8 @@ page-send {
     }
 
     .numPadButton {
-        border-color: rgb(10, 58, 0); 
+        border-color: rgb(10, 58, 0);
+        padding: 0px;
 
         :focus, :active {
             background-color: mediumseagreen;
