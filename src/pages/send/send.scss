@@ -1,5 +1,14 @@
 page-send {
 
+    ion-grid {
+        height: 60%;
+        justify-content: center;
+
+        ion-row {
+            height: 20%;
+        }
+    }
+
     ion-icon {
         color: white;
     }
@@ -52,4 +61,13 @@ page-send {
     .gridColOffsetRight {
         margin-right: 8%;
     }
+
+    .numPadButton {
+        border-color: rgb(10, 58, 0); 
+
+        :focus, :active {
+            background-color: mediumseagreen;
+        }
+    }
+    
 }
