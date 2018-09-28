@@ -83,13 +83,13 @@
 
       <ion-row>
         <ion-col text-center class="gridColOffsetLeft">
-          <button ion-button large class="numPadButton" full clear>.</button>
+          <button ion-button large class="numPadButton" full clear (click)="decimalClicked();">.</button>
         </ion-col>
         <ion-col text-center>
           <button ion-button large class="numPadButton" full clear (click)="populateTrtlQuantityToSend('0');">0</button>
         </ion-col>      
         <ion-col text-center class="gridColOffsetRight">
-          <button ion-button large class="numPadButton" full clear>del</button>
+          <button ion-button large class="numPadButton" full clear (click)="deleteClicked();">del</button>
         </ion-col>        
       </ion-row>      
 

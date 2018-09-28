@@ -48,4 +48,21 @@ export class SendPage {
     return "$" + dollarsValue;
   }
 
+  decimalClicked() {
+    if (this.trtlQuantityToSend.includes(".")) {
+      // do nothing
+    } else {
+      this.trtlQuantityToSend = this.trtlQuantityToSend.concat(".");
+    }
+  }
+
+  deleteClicked() {
+    if (this.trtlQuantityToSend == "0") {
+      // do nothing
+    } else {
+      this.trtlQuantityToSend = this.trtlQuantityToSend.slice(0, -1);
+    }
+
+  }
+
 }
