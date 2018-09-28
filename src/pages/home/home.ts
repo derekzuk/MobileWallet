@@ -4,6 +4,7 @@ import { SendPage } from '../send/send';
 import { ReceivePage } from '../receive/receive';
 import { SettingsPage } from '../settings/settings';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
+import { Vibration } from '@ionic-native/vibration';
 
 @Component({
   selector: 'page-home',
@@ -11,12 +12,16 @@ import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/na
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public nativePageTransitions: NativePageTransitions) {
+  constructor(public navCtrl: NavController, 
+    public nativePageTransitions: NativePageTransitions,
+    private vibration: Vibration) {
 
   }
 
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
+
+    this.vibration.vibrate(100);
 
     setTimeout(() => {
       console.log('Async operation has ended');
@@ -41,17 +46,11 @@ export class HomePage {
      };
 
     this.nativePageTransitions.slide(options);    
-    this.navCtrl.push(ReceivePage);
+    this.navCtrl.push(ReceivePage,{},{animate:false});
   }  
 
   navigateToSettings() {
     console.log("navigating to Settings page");
-    let options: NativeTransitionOptions = {
-      direction: 'up',
-      duration: 350,
-     };
-
-    this.nativePageTransitions.slide(options);    
     this.navCtrl.push(SettingsPage);    
   }
 

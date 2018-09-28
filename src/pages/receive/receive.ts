@@ -40,11 +40,11 @@ export class ReceivePage {
   returnToHome() {
     let options: NativeTransitionOptions = {
       direction: 'down',
-      duration: 200,
+      duration: 350,
      };
 
     this.nativePageTransitions.slide(options);    
-    this.navCtrl.pop();    
+    this.navCtrl.pop({animate:false});    
   }
 
 }
