@@ -12,17 +12,26 @@
 
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
-      <ion-item>
+<ion-content>
+  <ion-list ion-fixed style="width: 100%">
+      <ion-item class="ion-item">
         Copy Wallet Seed
       </ion-item>
-      <ion-item>
+      <ion-item class="ion-item">
         Change Default Currency
       </ion-item>            
+      <ion-item class="ion-item">
+
+    </ion-item>            
   </ion-list>
 
-  <button ion-button icon-end large color="buttonColor" style="width: 80%; padding: 5px;" (click)="logout()">
-    Log Out
-  </button>        
+  <ion-grid ion-fixed class="bottomDiv">
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button icon-end large color="buttonColor" style="width: 80%" (click)="logout()">
+          Log Out
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
