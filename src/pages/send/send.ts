@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { QrscanPage } from '../qrscan/qrscan'
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
+import { TrtlProvider } from '../../providers/trtl/trtl';
 
 /**
  * Generated class for the SendPage page.
@@ -18,13 +19,16 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 export class SendPage {
   trtlQuantityToSend: string = "0";
   trtlDollarConversionPercentage = 0.0005;
+  maxValue: string;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
-    public nativePageTransitions: NativePageTransitions) {
+    public nativePageTransitions: NativePageTransitions,
+    private trtlProvider: TrtlProvider) {
   }
 
   ionViewDidLoad() {
+    this.maxValue = this.trtlProvider.getTrtlWalletTotal();
   }
 
   test() {
@@ -39,7 +43,12 @@ export class SendPage {
     if (this.trtlQuantityToSend == "0") {
       this.trtlQuantityToSend = num;
     } else {
-      this.trtlQuantityToSend = this.trtlQuantityToSend.concat(num);
+      let newQuantity: string = this.trtlQuantityToSend.concat(num);
+      if (+newQuantity > +this.maxValue) {
+        this.trtlQuantityToSend = this.maxValue;
+      } else {
+        this.trtlQuantityToSend = this.trtlQuantityToSend.concat(num);
+      }
     }
   }
 
@@ -62,7 +71,10 @@ export class SendPage {
     } else {
       this.trtlQuantityToSend = this.trtlQuantityToSend.slice(0, -1);
     }
+  }
 
+  setMax() {
+    this.trtlQuantityToSend = this.maxValue;
   }
 
 }

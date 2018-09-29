@@ -14,6 +14,7 @@ import { SendPageModule } from '../pages/send/send.module';
 import { ReceivePageModule } from '../pages/receive/receive.module';
 import { QrscanPageModule } from '../pages/qrscan/qrscan.module';
 import { SettingsPageModule } from '../pages/settings/settings.module';
+import { TrtlProvider } from '../providers/trtl/trtl';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { SettingsPageModule } from '../pages/settings/settings.module';
     NativePageTransitions,
     Clipboard,
     Vibration,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    TrtlProvider
   ]
 })
 export class AppModule {}
