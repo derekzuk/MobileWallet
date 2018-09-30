@@ -6,10 +6,7 @@
 -->
 <ion-header color="navbarColor">
   <ion-navbar color="navbarColor">
-      <!-- <button ion-button icon-only clear (click)="test()">
-        <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
-      </button> -->
-
+    
       <ion-title style="text-align: center;">
         Send
       </ion-title>
@@ -24,19 +21,19 @@
 
 <ion-content ion-fixed class="sendContent">
 
-  <div ion-fixed style="background-color: white; width: 100%; height: 70px; position:relative; top:0px; padding-top: 13px; margin-top: -56px;">
+  <div ion-fixed class="trtlAddressDiv">
     <ion-input text-center class="trtlAddress" placeholder="Enter a TRTL Address"></ion-input>
   </div>
 
-  <div ion-fixed style="background-color: yellowgreen; width: 100%; height: 140px; position:relative; top:0px;">
-    <ion-item style="background-color: yellowgreen;">
-      <button ion-button item-left color="buttonColor" style="margin-top: 20px;" (click)="setMax()">Max</button>
-      <ion-label class="trtlQuantityToSendInput" text-center>{{trtlQuantityToSend}} TRTL
+  <div ion-fixed class="quantityToSendDiv">
+    <ion-item>
+      <button ion-button item-left color="buttonColor" (click)="setMax()">Max</button>
+        <ion-label class="trtlQuantityToSendInput" text-center>{{trtlQuantityToSend}} TRTL
       </ion-label>
     </ion-item>
 
-    <div style="text-align: center; height: 0px;">
-      <ion-icon style="transform: rotate(90deg); font-size: 26px" ios="ios-swap" md="md-swap"></ion-icon>
+    <div class="swapIconDiv">
+      <ion-icon ios="ios-swap" md="md-swap"></ion-icon>
     </div>
     
     <ion-label class="trtlDollarConversion" text-center>{{convertTrtlToDollars()}}
