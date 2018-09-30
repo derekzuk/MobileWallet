@@ -44,7 +44,7 @@ export class SendPage {
       this.trtlQuantityToSend = num;
     } else {
       let newQuantity: string = this.trtlQuantityToSend.concat(num);
-      if (+newQuantity > +this.maxValue) {
+      if (+newQuantity >= +this.maxValue) {
         this.trtlQuantityToSend = this.maxValue;
       } else {
         this.trtlQuantityToSend = this.trtlQuantityToSend.concat(num);
