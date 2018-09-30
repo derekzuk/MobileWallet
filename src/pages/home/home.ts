@@ -5,6 +5,7 @@ import { ReceivePage } from '../receive/receive';
 import { SettingsPage } from '../settings/settings';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 import { Vibration } from '@ionic-native/vibration';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -14,7 +15,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, 
     public nativePageTransitions: NativePageTransitions,
-    private vibration: Vibration) {
+    private vibration: Vibration,
+    private alertCtrl: AlertController) {
 
   }
 
@@ -56,6 +58,43 @@ export class HomePage {
   navigateToSettings() {
     console.log("navigating to Settings page");
     this.navCtrl.push(SettingsPage);    
+  }
+
+  presentTransactionOptions() {
+    let alert = this.alertCtrl.create({
+      title: 'TRTL Transaction',
+      message: 'What action would you like to take related to this TRTL Transaction?',
+      buttons: [
+        {
+          text: 'Send TRTL to Address',
+          role: 'sendTrtlToAddress',
+          handler: () => {
+            console.log('sendTrtlToAddress clicked');
+          }
+        },
+        {
+          text: 'View Transaction on Explorer',
+          handler: () => {
+            console.log('viewTransactionOnExplorer clicked');
+          }
+        },
+        {
+          text: 'Copy Address',
+          role: 'copyAddress',
+          handler: () => {
+            console.log('copyAddress clicked');
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('cancel clicked');
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 }

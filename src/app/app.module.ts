@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 import { Clipboard } from '@ionic-native/clipboard';
 import { Vibration } from '@ionic-native/vibration';
+import { AlertController } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -41,7 +42,8 @@ import { TrtlProvider } from '../providers/trtl/trtl';
     Clipboard,
     Vibration,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    TrtlProvider
+    TrtlProvider,
+    AlertController
   ]
 })
 export class AppModule {}
