@@ -13,6 +13,11 @@ page-send {
         color: white;
     }
 
+    .sendContent {
+        margin-top: 56px; 
+        background-color: color($colors, backgroundColor);
+    }
+
     .button-inner {
         color: white;
     }
@@ -31,7 +36,7 @@ page-send {
     .trtlQuantityToSendInput {
         text-align: center; 
         padding-top: 13px;
-        -webkit-text-fill-color: rgb(10, 58, 0);
+        -webkit-text-fill-color: color($colors, backgroundColor);
     }
 
     .trtlDollarConversion {

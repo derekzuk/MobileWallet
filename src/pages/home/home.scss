@@ -14,7 +14,7 @@ page-home {
     }
 
     h3 {
-        background-color: rgb(10, 58, 0);  
+        background-color: color($colors, backgroundColor);
         margin-top: 0px;
         margin-bottom: 0px;
         text-align: center;
@@ -22,20 +22,20 @@ page-home {
     }
 
     .darkDiv {
-        background-color: rgb(10, 58, 0);  
+        background-color: color($colors, backgroundColor); 
         margin-top: 0px;
         margin-bottom: 0px;
     }
 
     .totalFundsDiv {
-        background-color: rgb(10, 58, 0);  
+        background-color: color($colors, backgroundColor); 
         margin-top: 0px;
         margin-bottom: 0px;     
         height: 40px;   
     }
 
     .sendReceiveDiv {
-        background-color: rgb(10, 58, 0);  
+        background-color: color($colors, backgroundColor);
         margin-top: 0px;
         margin-bottom: 0px;      
         position: absolute;
