@@ -33,6 +33,10 @@ export class HomePage {
     console.log("in test()");
   }
 
+  testItem() {
+    console.log("in testItem()");
+  }
+
   navigateToSend() {
     console.log("navigating to Send page");
     this.navCtrl.push(SendPage);

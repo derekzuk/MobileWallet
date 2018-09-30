@@ -29,10 +29,10 @@
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
     <ion-list>
-        <ion-item>
+        <ion-item (click)="testItem();" class="transactionItem">
           <ion-row>
             <ion-col col-3>
-              <ion-icon style="color: grey;" ios="ios-mail" md="md-mail"></ion-icon>
+              <ion-icon style="color: grey; padding-left: 16px;" ios="ios-mail" md="md-mail"></ion-icon>
             </ion-col>
             <ion-col col-4>
               4.20
@@ -42,10 +42,10 @@
             </ion-col>
           </ion-row>
         </ion-item>
-        <ion-item>
+        <ion-item (click)="testItem();" class="transactionItem">
           <ion-row>
             <ion-col col-3>
-              <ion-icon style="color: grey;" ios="ios-send" md="md-send"></ion-icon>
+              <ion-icon style="color: grey; padding-left: 16px;" ios="ios-send" md="md-send"></ion-icon>
             </ion-col>
             <ion-col col-4>
               4.20
@@ -54,14 +54,7 @@
               trtl_1xldj...w9msl
             </ion-col>
           </ion-row>
-        </ion-item>
-        <ion-item></ion-item>
-        <ion-item></ion-item>
-        <ion-item></ion-item>
-        <ion-item></ion-item>
-        <ion-item></ion-item>
-        <ion-item></ion-item>
-        <ion-item></ion-item>        
+        </ion-item>    
     </ion-list> 
 
   <ion-grid ion-fixed class="sendReceiveDiv">
