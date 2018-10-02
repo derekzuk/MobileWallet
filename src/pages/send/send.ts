@@ -20,6 +20,7 @@ export class SendPage {
   trtlQuantityToSend: string = "0";
   trtlDollarConversionPercentage = 0.0005;
   maxValue: string;
+  sendToAddress: string;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
@@ -27,8 +28,10 @@ export class SendPage {
     private trtlProvider: TrtlProvider) {
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     this.maxValue = this.trtlProvider.getTrtlWalletTotal();
+    this.sendToAddress = this.trtlProvider.getSendToAddress();
+    console.log("this.sendToAddress in send.ts: " + this.sendToAddress);
   }
 
   test() {
@@ -36,7 +39,7 @@ export class SendPage {
   }
 
   navigateToQRScan() {
-    this.navCtrl.push(QrscanPage);
+    this.navCtrl.push(QrscanPage,{},{animate:false});
   }
 
   populateTrtlQuantityToSend(num: string) {

@@ -22,7 +22,8 @@
 <ion-content ion-fixed class="sendContent">
 
   <div ion-fixed class="trtlAddressDiv">
-    <ion-input text-center class="trtlAddress" placeholder="Enter a TRTL Address"></ion-input>
+    <ion-input name="sendToAddress" [(ngModel)]="sendToAddress" text-center class="trtlAddress" placeholder="Enter a TRTL Address">
+    </ion-input>
   </div>
 
   <div ion-fixed class="quantityToSendDiv">

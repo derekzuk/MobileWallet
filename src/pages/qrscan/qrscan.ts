@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner';
+import { TrtlProvider } from '../../providers/trtl/trtl';
 
 /**
  * Generated class for the QrscanPage page.
@@ -17,7 +18,10 @@ import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner';
 export class QrscanPage {
   scanSub;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private qrScanner: QRScanner) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private qrScanner: QRScanner,
+    private trtlProvider: TrtlProvider) {
   }
 
   ionViewDidLoad() {
@@ -34,10 +38,11 @@ export class QrscanPage {
          
          // start scanning
          this.scanSub = this.qrScanner.scan().subscribe((text: string) => {
-           console.log('Scanned something', text);
-          
-           this.scanSub.unsubscribe(); // stop scanning           
-          this.navigateToSend();
+            console.log('Scanned something', text);
+            this.trtlProvider.setQrScanResult(text);
+
+            this.scanSub.unsubscribe(); // stop scanning           
+            this.navigateToSend();
          });
 
        } else if (status.denied) {

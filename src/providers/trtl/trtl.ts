@@ -9,6 +9,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class TrtlProvider {
   trtlWalletTotal: string = "420.69";
+  sendToAddress: string;
 
   constructor() {
     console.log('Hello TrtlProvider Provider');
@@ -16,6 +17,15 @@ export class TrtlProvider {
 
   getTrtlWalletTotal() {
     return this.trtlWalletTotal;
+  }
+
+  setQrScanResult(qrCode: string) {
+    this.sendToAddress = qrCode;
+  }
+
+  getSendToAddress() {
+    console.log("sendToAddress from Provider: " + this.sendToAddress);
+    return this.sendToAddress;
   }
 
 }

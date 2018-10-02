@@ -16,7 +16,7 @@ import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/na
   templateUrl: 'receive.html',
 })
 export class ReceivePage {
-  trtlAddress: string = "trtl_123lskjafdlklsdjlfdjslkdfjlfkjsdlkdfsj";
+  trtlAddress: string = "TRTLv2MxqomYoBNjKD1jPeQBRZ6ghG9xpED51C3uSv2VDNgt7u8fHVtA8oEF5sjXC7U1kavfTLAPQKKoPUodidGuDULqYNXihwJ";
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
