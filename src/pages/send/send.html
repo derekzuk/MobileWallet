@@ -33,7 +33,7 @@
       </ion-label>
     </ion-item>
 
-    <div class="swapIconDiv">
+    <div ion-fixed class="swapIconDiv">
       <ion-icon ios="ios-swap" md="md-swap"></ion-icon>
     </div>
     
@@ -42,7 +42,6 @@
   </div>
 
   <ion-grid ion-fixed>
-    
     <ion-row>
       <ion-col text-center class="gridColOffsetLeft">
         <button ion-button large class="numPadButton" full clear (click)="populateTrtlQuantityToSend('1');">1</button>
@@ -98,7 +97,6 @@
         </button>
       </ion-col>
     </ion-row>
-
   </ion-grid>
 
 </ion-content>
