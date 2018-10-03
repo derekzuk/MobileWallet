@@ -37,13 +37,7 @@ export class QrscanPage {
          this.qrScanner.show();
          
          // start scanning
-         this.scanSub = this.qrScanner.scan().subscribe((text: string) => {
-            console.log('Scanned something', text);
-            this.trtlProvider.setQrScanResult(text);
-
-            this.scanSub.unsubscribe(); // stop scanning           
-            this.navigateToSend();
-         });
+         this.doScan();
 
        } else if (status.denied) {
          // camera permission was permanently denied
@@ -65,6 +59,18 @@ export class QrscanPage {
 
   navigateToSend() {
     this.navCtrl.pop();
+  }
+
+  doScan() {
+    this.scanSub = this.qrScanner.scan().subscribe((text: string) => {
+      console.log('Scanned something', text);
+      if (text.toUpperCase().startsWith("TRTL",0)) {
+        this.trtlProvider.setQrScanResult(text);
+
+        this.scanSub.unsubscribe(); // stop scanning           
+        this.navigateToSend();    
+      }
+    });
   }
 
 }
